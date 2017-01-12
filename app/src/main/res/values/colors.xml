@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design patterns-->
+    <!-- Indigo 300 -->
+    <color name="colorPrimaryLight">#7986CB</color>
+    <!-- Indigo 500 -->
+    <color name="colorPrimary">#3F51B5</color>
+    <!-- Indigo 900 -->
+    <color name="colorPrimaryDark">#1A237E</color>
+    <!-- Green A400 -->
+    <color name="colorAccent">#00E676</color>
+    <!-- Red 500 -->
+    <color name="colorText">#F44336</color>
+    <!-- White -->
+    <color name="colorTextLight">#ffffff</color>
+    <!-- Indigo 50 -->
+    <color name="colorBackground">#E8EAF6</color>
+</resources>
