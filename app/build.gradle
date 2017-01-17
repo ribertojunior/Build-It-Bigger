@@ -22,12 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }*/
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     // Added for AdMob
-    compile project(':jokeTeller')
+    /*compile project(':jokeTeller')*/
     compile project(':jokeDisplay')
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:design:25.0.1'
