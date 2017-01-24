@@ -1,12 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.util.Log;
 
-import com.casasw.jokedisplay.JokeMainActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -19,8 +17,8 @@ import java.io.IOException;
  * AsyncTask to pull jokes
  */
 
-public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
-    private static final String LOG_TAG = EndpointsAsyncTask.class.getSimpleName();
+public class EndpointsAsyncTaskMock extends AsyncTask<Pair<Context, String>, Void, String> {
+    private static final String LOG_TAG = EndpointsAsyncTaskMock.class.getSimpleName();
     private static MyApi myApiService = null;
     private Context context;
 
@@ -60,9 +58,7 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
             //Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
             Log.d(LOG_TAG, "onPostExecute: " + s);
         }
-        Intent intent = new Intent(context,JokeMainActivity.class);
-        intent.putExtra("EXTRA_JOKE", s);
-        context.startActivity(intent);
+
 
     }
 }

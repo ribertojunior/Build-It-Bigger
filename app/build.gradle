@@ -10,18 +10,30 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        /*debug {
-            minifyEnabled true
-            useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }*/
+
     }
+
+    productFlavors {
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+
+        paidTest {
+            applicationId "com.udacity.gradle.builditbigger.test"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_6
         targetCompatibility JavaVersion.VERSION_1_7
@@ -39,4 +51,11 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:10.0.1'
     //compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':backend', configuration: 'android-endpoints')
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    androidTestCompile('com.android.support.test:runner:0.5'){
+        exclude module: 'support-annotations'
+    }
+
 }

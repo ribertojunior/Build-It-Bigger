@@ -46,12 +46,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize"
+        >
         <TextView
             android:text="@string/instructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/instructions_text_view" />
+            android:id="@+id/instructions_text_view"
+            />
 
         <Button
             android:layout_below="@id/instructions_text_view"
@@ -70,7 +72,19 @@
             ads:adUnitId="@string/banner_ad_unit_id"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
     </RelativeLayout>
+
+
 
 
 </FrameLayout>
