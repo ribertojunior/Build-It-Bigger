@@ -1,0 +1,8 @@
+
+task testTask() {
+    buildDir = 'backend'
+    finalizedBy "appengineStop"
+    dependsOn = ["build" ,"appendineRun"]
+
+    println "Feito."
+}

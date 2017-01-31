@@ -16,4 +16,28 @@ allprojects {
     repositories {
         jcenter()
     }
+
 }
+
+task testTask(dependsOn: ":app:connectedPaidTestDebugAndroidTest") {
+    doLast {
+        println "Test done."
+        println "Shutting down the server."
+    }
+}
+
+testTask.finalizedBy ":backend:appengineStop"
+
+task runAppEngine (dependsOn: ":backend:appengineRun") {
+    project(":backend").afterEvaluate { backend ->
+        backend.extensions.appengine.daemon = true
+    }
+    doLast {
+        println "started the server!"
+    }
+}
+
+runAppEngine.finalizedBy "testTask"
+
+
+
