@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/app_name"
+                    android:text="@string/activity_label"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
@@ -53,15 +53,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/instructions_text_view"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_joke_size"
             />
-
         <Button
-            android:layout_below="@id/instructions_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
             android:text="@string/button_text"
+            android:id="@+id/button_joke"
             android:onClick="tellJoke"
-
+            android:layout_below="@+id/instructions_text_view"
+            android:layout_centerHorizontal="true"
             />
 
         <com.google.android.gms.ads.AdView
@@ -81,6 +84,8 @@
             android:progressDrawable="@drawable/circular_progress_bar"
             android:layout_centerInParent="true"
             android:visibility="gone"/>
+
+
 
     </RelativeLayout>
 
